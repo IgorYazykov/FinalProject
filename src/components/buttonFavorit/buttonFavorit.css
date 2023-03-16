@@ -1,0 +1,14 @@
+.buttonFavorit{
+    cursor: pointer;
+    text-align: center;
+    width: 90px;
+    margin-left: 20px;
+    font-family: "Pacifico-Regular";
+    font-size: 25px;
+    border-radius: 15px;
+}
+
+.buttonFavorit:hover{
+    background-color: rgb(138, 138, 37);
+    color: white;
+}

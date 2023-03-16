@@ -1,0 +1,254 @@
+@import url("../../style/fontsAdd.css");
+
+.card {
+    height: 500px;
+    width: 300px;
+    background-color: rgb(138, 117, 0);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 10px 25px 10px;
+    border: solid black 3px;
+}
+
+.imgCard {
+    height: 200px;
+    width: 300px;
+    border-radius: 15px 15px 0 0;
+    /* margin: 10px; */
+}
+
+.titleCard{
+    color: rgb(207, 207, 207);
+    font-family: "Pacifico-Regular";
+    font-size:30px;
+    margin: 15px;
+}
+
+.description , .theme{
+    margin: 0 30px 20px 10px;
+    color: rgb(207, 207, 207);
+    font-family: "Pacifico-Regular";
+    font-size:20px;
+}
+
+.buttonContainer{
+    display: flex;
+}
+
+.buttonContainer .buttonStart, .buttonMore{
+    color: rgb(207, 207, 207);
+    font-family: "Pacifico-Regular";
+    font-size:20px;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    border: solid black 3px;
+    cursor: pointer;
+}
+
+.buttonStart {
+    margin: 0 25px 0 15px;
+}
+
+.buttonStart:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.buttonMore {
+    margin: 0 15px 0 25px;
+}
+
+.buttonMore:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.containerModal {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.178);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startedModal {
+    width: 400px;
+    height: 400px;
+    background-color: darkorange;
+    border-radius: 15px;
+    font-family: "Pacifico-Regular";
+    color: white;
+    font-size:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttonCloss {
+    width: 100px;
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(145, 145, 1);
+}
+
+.buttonCloss:hover{
+    background-color: rgb(223, 223, 28);
+    color: black;
+}
+
+.moreModal {
+    width: 1200px;
+    height: 600px;
+    background-color: rgb(255, 186, 102);
+    border-radius: 20px;
+    font-family: "Pacifico-Regular";
+    color: black;
+    display: flex;
+    border: solid black 3px;
+}
+
+.imgFromMore{
+    width: 800px;
+    height: 600px;
+    border-radius: 17px 0 0 17px;
+}
+
+.moreTextContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.titleCardMore{
+    margin: 30px 0 30px 10px;
+    font-size:60px;
+}
+
+.descriptionMore, .themeMore{
+    font-size:30px;
+}
+
+.buttonClossMore{
+    width: 200px;
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(228, 228, 0);
+}
+
+.buttonClossMore:hover{
+    background-color: rgb(122, 122, 25);
+    color: white;
+}
+
+@media (max-width : 1250px) {
+    .moreModal {
+        width: 850px;
+        height: 450px;
+    }
+
+    .imgFromMore{
+        width: 550px;
+        height: 450px;
+    }
+
+    .titleCardMore{
+        margin: 20px 0 20px 10px;
+        font-size:50px;
+    }
+
+    .descriptionMore, .themeMore{
+        font-size:25px;
+    }
+}
+
+@media (max-width :920px) {
+    .moreModal {
+        width: 650px;
+        height: 350px;
+    }
+
+    .imgFromMore{
+        width: 400px;
+        height: 350px;
+    }
+
+    .titleCardMore{
+        margin: 15px 0 15px 10px;
+        font-size:40px;
+    }
+
+    .descriptionMore, .themeMore{
+        font-size:20px;
+    }
+
+    .card {
+        height: 400px;
+        width: 250px;
+        margin: 30px 5px 15px 5px;
+    }
+    
+    .imgCard {
+        height: 180px;
+        width: 250px;
+    }
+}
+
+@media (max-width :700px) {
+    .moreModal {
+        width: 450px;
+        height: 200px;
+    }
+
+    .imgFromMore{
+        width: 300px;
+        height: 200px;
+    }
+
+    .titleCardMore{
+        margin: 0 0 0 5px;
+        font-size:20px;
+    }
+
+    .descriptionMore, .themeMore{
+        font-size:15px;
+    }
+
+    .buttonClossMore{
+        width: 80px;
+        font-size:15px;
+        margin-bottom: 5px;
+    }
+
+    .moreTextContainer{
+        overflow: scroll;
+    }
+
+    .startedModal {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width :500px) {
+    .moreModal {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgFromMore{
+        border-radius: 10px 10px 0 0;
+    }
+}

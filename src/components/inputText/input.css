@@ -1,0 +1,27 @@
+.input{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    margin-left: 15px;
+    border-radius: 15px;
+    border: solid black 2px;
+    background-color: rgb(185, 185, 15);
+}
+
+.input input{
+    width: 150px;
+    background-color: rgb(185, 185, 15);
+    border: 0;
+    border-bottom: solid black 1px;
+    margin-left: 5px;
+}
+
+.input img{
+    height: 21px;
+    margin-left: 10px;
+}
+
+input:focus{
+    outline: none;
+}

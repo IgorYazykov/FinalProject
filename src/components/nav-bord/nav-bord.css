@@ -1,0 +1,33 @@
+@import url("../../style/fontsAdd.css");
+
+.right_bord_container{
+    position: fixed;
+    background: rgb(252, 252, 10) ;
+    height: 100%;
+    width: 250px;
+    font-family: "Pacifico-Regular";
+    display: flex;
+    flex-direction: column;
+    top: 103px;
+    right: 0;
+    font-size: 25px;
+    border-left: solid black 3px;
+}
+
+.right_bord_title{
+    margin-left: 20px;
+}
+
+/* .right_bord_container div{
+    margin-left: 30px;
+} */
+
+@media (max-width : 900px) {
+    .right_bord_container{
+        display: none;
+    }
+}
+
+.right_bord_container .buttonFavorit{
+    margin-left: 20px;
+}

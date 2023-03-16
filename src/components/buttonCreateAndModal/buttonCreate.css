@@ -1,0 +1,122 @@
+.modalBody {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.178);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgTool {
+    width: 125px;
+    height: 125px;
+    margin: 15px;
+}
+
+.imgContainer {
+    position: fixed;
+    top: 100px;
+    background-color: rgb(255, 192, 32);
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px rgb(214, 161, 28) ;
+}
+
+.imgContainer:hover{
+    background-color: rgb(180, 136, 23);
+}
+
+.modalContainer {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-color: darkorange;
+    border-radius: 15px;
+}
+
+.modalContainer div{
+    font-family: "Pacifico-Regular"; 
+    font-size: 26px;
+}
+
+#buttonSendCloss, #buttonSend{
+    text-align: center;
+    height: 45px;
+    width: 75px;
+    cursor: pointer;
+    background-color: rgb(185, 102, 0);
+    border-radius: 10px;
+}
+
+#buttonSendCloss{
+    margin: 20px 50px 20px 75px;
+}
+
+#buttonSendCloss:hover{
+    background-color: rgb(185, 59, 0);
+    color: white;
+}
+
+#buttonSend {
+    margin: 20px 75px 20px 50px;
+}
+
+#buttonSend:hover{
+    background-color: rgb(151, 185, 0);
+    color: white;
+}
+
+@media (max-width : 900px) {
+    .imgTool {
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+    }
+
+    .imgContainer {
+        width: 95px;
+        height: 95px;
+        top: 75px;
+    }
+
+    .imgContainer {
+        box-shadow: 5px 5px 3px rgb(214, 161, 28) ;
+    }
+}
+
+@media (max-width :700px) {
+    .modalContainer {
+        width: 300px;
+        height: 300px;
+    }
+
+    #buttonSendCloss{
+        margin: 20px 25px 20px 50px;
+    }
+    
+    #buttonSend {
+        margin: 20px 50px 20px 25px;
+    }
+
+}
+
+@media (max-width :500px) {
+    .imgTool {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .imgContainer {
+        width: 60px;
+        height: 60px;
+        top: 0px;
+        margin: 3px;
+        box-shadow: 3px 3px 3px rgb(214, 161, 28) ;
+    }
+}
