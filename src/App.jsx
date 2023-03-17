@@ -1,11 +1,11 @@
 import React from 'react';
-import MainPage from './pages/mainPage';
+import Quizle from './pages/Quizle';
 
 
 function App() {
   return (
     <div className='Container'>
-      <MainPage></MainPage>
+      <Quizle/>
     </div>
   );
 }

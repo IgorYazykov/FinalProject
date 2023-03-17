@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import './mobailNavBord.css';
-import Input from "../inputText/input";
-import ButtonFavorit from "../buttonFavorit/buttonFavorit";
+import './MobailNavBoard.css';
+import SearchBar from "../SearchBar/SearchBar";
+import ButtonFavorit from "../ButtonFavorit/ButtonFavorit";
 
 export default function MobailNavBoard () {
     let [showMobileModal, setShowMobileModal] = useState(false);
@@ -13,8 +13,8 @@ export default function MobailNavBoard () {
         <div className="mobileMenu">
             {!showMobileModal && <img onClick={clickShowMobileModal} className="mobileMenuImg" src="../../img/menu.png" alt="mobileMenu" />}
             {showMobileModal && <div className="mobailModalContainer">
-                <Input></Input>
-                <ButtonFavorit></ButtonFavorit>
+                <SearchBar/>
+                <ButtonFavorit/>
                 <div className="buttonCloseMob" onClick={clickShowMobileModal}>Close</div>
             </div>}
         </div>

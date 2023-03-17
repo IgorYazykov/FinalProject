@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import "./renderCard.css";
+import "./RenderCardQuize.css";
 
 export default function RenderCardQuize({id, fullDiscription, title, description, img}) {
-    let [buttonStart, setButtonStart] = useState(false);
+    let [showStartModul, setShowStartModul] = useState(false);
     const clickStart = () =>{
-        setButtonStart(!buttonStart)
+        setShowStartModul(!showStartModul)
     }
 
-    let [buttonMore, setButtonMore] = useState(false);
+    let [showMoreInformationModul, setShowMoreInformationModul] = useState(false);
     const clickMore = () =>{
-        setButtonMore(!buttonMore)
+        setShowMoreInformationModul(!showMoreInformationModul)
     }
 
     return(
@@ -22,7 +22,7 @@ export default function RenderCardQuize({id, fullDiscription, title, description
                 <div onClick={clickMore} className="buttonMore">More</div>
             </div>
             {
-                buttonStart && 
+                showStartModul && 
                 <div className="containerModal">
                     <div className="startedModal">
                         <p>You are started quize!</p>
@@ -31,13 +31,12 @@ export default function RenderCardQuize({id, fullDiscription, title, description
                 </div>
             },
             {
-                buttonMore &&
+                showMoreInformationModul &&
                 <div className="containerModal">
                     <div className="moreModal">
                         <img className="imgFromMore" src={img} alt={title}/>
                         <div className="moreTextContainer">
                             <p className="titleCardMore">{title}</p>
-                            {/* <p className="descriptionMore">{description}</p> */}
                             <p className="themeMore"> {fullDiscription}</p>
                             <div onClick={clickMore} className="buttonClossMore">Close</div>
                         </div>

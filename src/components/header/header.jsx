@@ -1,13 +1,7 @@
-// import React, { useState } from "react";
-import './headerCSS.css';
+import React from "react";
+import './Header.css';
 
 export default function Header () {
-    // let [showModal, setShowModal] = useState(false);
-    // const clickShowModal = () =>{
-    //     setShowModal(!showModal)
-    // }
-
-    // NavBord(showModal);
 
     return (
         <div className="header">

@@ -1,4 +1,4 @@
-@import url("../../style/fontsAdd.css");
+@import url("../../App.css");
 
 .right_bord_container{
     position: fixed;
@@ -17,10 +17,6 @@
 .right_bord_title{
     margin-left: 20px;
 }
-
-/* .right_bord_container div{
-    margin-left: 30px;
-} */
 
 @media (max-width : 900px) {
     .right_bord_container{
