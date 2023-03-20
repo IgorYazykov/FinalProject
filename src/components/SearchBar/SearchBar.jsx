@@ -1,4 +1,5 @@
-import './input.css'
+import React from 'react'
+import './SearchBar.css'
 
 export default function input () {
     return(

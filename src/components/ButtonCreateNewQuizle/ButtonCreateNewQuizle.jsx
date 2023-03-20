@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./buttonCreate.css";
+import "./ButtonCreateNewQuizle.css";
 
 export default function ButtonCreate () {
-    let [button, setButton] = useState(false);
-    const clickCreateQuize = () =>{
-        setButton(!button)
+    let [showCreateQuizeModal, setCreateQuizeModal] = useState(false);
+    const clickCreateQuize = () => {
+        setCreateQuizeModal(!showCreateQuizeModal)
     }
     
     return (
@@ -12,13 +12,9 @@ export default function ButtonCreate () {
             <div onClick={clickCreateQuize} className="imgContainer">
                 <img className="imgTool" src="../../img/toolFix.png" alt="toolFix" />
             </div>
-            {
-                button && 
+            {showCreateQuizeModal && 
                 <div className="modalBody">
                     <div className="modalContainer">
-                        {/* <input id="inputQuizTitle" type="text" />Title
-                        <input id="quizDescription" type="text" />Description
-                        <input id="themeOfQuizl" type="text" />theme */}
                         <div onClick={clickCreateQuize} id="buttonSendCloss">back</div>
                         <div  id="buttonSend">add</div>
                     </div>

@@ -1,4 +1,5 @@
-import "./buttonFavorit.css"
+import React from "react"
+import "./ButtonFavorit.css"
 
 export default function buttonFavorit () {
     return (
