@@ -3,12 +3,12 @@ import "./RenderCardQuize.css";
 
 export default function RenderCardQuize({id, fullDiscription, title, description, img}) {
     let [showStartModul, setShowStartModul] = useState(false);
-    const clickStart = () =>{
+    const clickStart = () => {
         setShowStartModul(!showStartModul)
     }
 
     let [showMoreInformationModul, setShowMoreInformationModul] = useState(false);
-    const clickMore = () =>{
+    const clickMore = () => {
         setShowMoreInformationModul(!showMoreInformationModul)
     }
 
@@ -21,8 +21,7 @@ export default function RenderCardQuize({id, fullDiscription, title, description
                 <div onClick={clickStart} className="buttonStart">Star</div>
                 <div onClick={clickMore} className="buttonMore">More</div>
             </div>
-            {
-                showStartModul && 
+            {showStartModul && 
                 <div className="containerModal">
                     <div className="startedModal">
                         <p>You are started quize!</p>
@@ -30,8 +29,7 @@ export default function RenderCardQuize({id, fullDiscription, title, description
                     </div>
                 </div>
             },
-            {
-                showMoreInformationModul &&
+            {showMoreInformationModul &&
                 <div className="containerModal">
                     <div className="moreModal">
                         <img className="imgFromMore" src={img} alt={title}/>

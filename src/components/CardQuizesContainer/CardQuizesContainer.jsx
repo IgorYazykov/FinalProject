@@ -4,10 +4,10 @@ import './CardQuizesContainer.css';
 import {quizles} from "../../api/index"
 
 export default function CardQuize () {
-    const [quizlesData, setQuizlsData]= useState([]);
+    const [quizlesData, setQuizlsData] = useState([]);
 
     useEffect(() => {
-        (async () =>{
+        (async () => {
             try{
                 const { data } = await quizles.fetch();
                 setQuizlsData(data)
@@ -20,7 +20,16 @@ export default function CardQuize () {
 
     return (
         <div className="cardContainer">
-            {quizlesData.map((quizleData)=><RenderCardQuize key={quizleData.id} id={quizleData.id} fullDiscription={quizleData.fullDiscription} title={quizleData.quizTitle} description={quizleData.quizDescription} img={quizleData.image}/>)}
+            {quizlesData.map((quizleData) => (
+                <RenderCardQuize 
+                    key={quizleData.id} 
+                    id={quizleData.id} 
+                    fullDiscription={quizleData.fullDiscription} 
+                    title={quizleData.quizTitle} 
+                    description={quizleData.quizDescription} 
+                    img={quizleData.image}
+                />
+            ))}
         </div>
     )
 }

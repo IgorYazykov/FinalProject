@@ -3,7 +3,7 @@ import "./ButtonCreateNewQuizle.css";
 
 export default function ButtonCreate () {
     let [showCreateQuizeModal, setCreateQuizeModal] = useState(false);
-    const clickCreateQuize = () =>{
+    const clickCreateQuize = () => {
         setCreateQuizeModal(!showCreateQuizeModal)
     }
     
@@ -12,8 +12,7 @@ export default function ButtonCreate () {
             <div onClick={clickCreateQuize} className="imgContainer">
                 <img className="imgTool" src="../../img/toolFix.png" alt="toolFix" />
             </div>
-            {
-                showCreateQuizeModal && 
+            {showCreateQuizeModal && 
                 <div className="modalBody">
                     <div className="modalContainer">
                         <div onClick={clickCreateQuize} id="buttonSendCloss">back</div>
