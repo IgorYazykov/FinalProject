@@ -1,10 +1,16 @@
-import React from "react"
-import "./ButtonFavorit.css"
+import "./ButtonFavorit.css";
+import { Component } from "react";
 
-export default function buttonFavorit () {
-    return (
-        <div className='buttonFavorit'>
-            <p>Favorite</p>
-        </div>
-    )
+export default class buttonFavorit extends Component {
+    constructor() {
+        super();
+    }
+
+    render() {
+        return (
+            <div className='buttonFavorit'>
+                <p>Favorite</p>
+            </div>
+        )
+    }
 }

@@ -1,22 +1,32 @@
-import React, { useState } from "react";
 import './MobailNavBoard.css';
 import SearchBar from "../SearchBar/SearchBar";
 import ButtonFavorit from "../ButtonFavorit/ButtonFavorit";
+import { Component } from 'react';
 
-export default function MobailNavBoard () {
-    let [showMobileModal, setShowMobileModal] = useState(false);
-    const clickShowMobileModal = () => {
-        setShowMobileModal(!showMobileModal);
-    };
+export default class MobailNavBoard extends Component {
+    state = {
+        showMobileModal: false
+    }
 
-    return(
-        <div className="mobileMenu">
-            {!showMobileModal && <img onClick={clickShowMobileModal} className="mobileMenuImg" src="../../img/menu.png" alt="mobileMenu" />}
-            {showMobileModal && <div className="mobailModalContainer">
-                <SearchBar/>
-                <ButtonFavorit/>
-                <div className="buttonCloseMob" onClick={clickShowMobileModal}>Close</div>
-            </div>}
-        </div>
-    )
+    constructor() {
+        super ();
+        this.clickShowMobileModal = this.clickShowMobileModal.bind(this);
+    }
+
+    render() {
+        return(
+            <div className="mobileMenu">
+                {!this.state.showMobileModal && <img onClick={this.clickShowMobileModal} className="mobileMenuImg" src="../../img/menu.png" alt="mobileMenu" />}
+                {this.state.showMobileModal && <div className="mobailModalContainer">
+                    <SearchBar/>
+                    <ButtonFavorit/>
+                    <div className="buttonCloseMob" onClick={this.clickShowMobileModal}>Close</div>
+                </div>}
+            </div>
+        )
+    }
+
+    clickShowMobileModal() {
+        this.setState ({ showMobileModal: !this.state.showMobileModal})
+    }
 }

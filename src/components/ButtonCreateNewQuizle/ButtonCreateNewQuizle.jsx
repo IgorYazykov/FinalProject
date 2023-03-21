@@ -1,25 +1,35 @@
-// import React, { useState } from "react";
+import { Component } from "react";
 import "./ButtonCreateNewQuizle.css";
 
-export default function ButtonCreate () {
-    let [showCreateQuizeModal, setCreateQuizeModal] = useState(false);
-    const clickCreateQuize = () => {
-        setCreateQuizeModal(!showCreateQuizeModal)
+export default class ButtonCreate extends Component {
+    state = {
+        showCreateQuizeModal: false
     }
     
-    return (
-        <div>
-            <div onClick={clickCreateQuize} className="imgContainer">
-                <img className="imgTool" src="../../img/toolFix.png" alt="toolFix" />
-            </div>
-            {showCreateQuizeModal && 
-                <div className="modalBody">
-                    <div className="modalContainer">
-                        <div onClick={clickCreateQuize} id="buttonSendCloss">back</div>
-                        <div  id="buttonSend">add</div>
-                    </div>
+    constructor() {
+        super();
+        this.clickCreateQuize = this.clickCreateQuize.bind(this);
+    }
+
+    render() {
+        return (
+            <div>
+                <div onClick={this.clickCreateQuize} className="imgContainer">
+                    <img className="imgTool" src="../../img/toolFix.png" alt="toolFix" />
                 </div>
-            }
-        </div>
-    )
+                {this.state.showCreateQuizeModal && 
+                    <div className="modalBody">
+                        <div className="modalContainer">
+                            <div onClick={this.clickCreateQuize} id="buttonSendCloss">back</div>
+                            <div  id="buttonSend">add</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        )
+    }
+
+    clickCreateQuize() {
+        this.setState({ showCreateQuizeModal: !this.state.showCreateQuizeModal })
+    }
 }
