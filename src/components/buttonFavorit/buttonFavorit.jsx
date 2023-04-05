@@ -1,10 +1,14 @@
-import React from "react"
-import "./ButtonFavorit.css"
+import React from 'react';
+import './ButtonFavorit.css';
 
-export default function buttonFavorit () {
-    return (
-        <div className='buttonFavorit'>
-            <p>Favorite</p>
-        </div>
-    )
+export default function buttonFavorit({ onClick }) {
+  const checked = () => {
+    onClick();
+  };
+
+  return (
+    <div className='buttonFavorit' onClick={ checked }>
+      <p>Favorite</p>
+    </div>
+  );
 }
