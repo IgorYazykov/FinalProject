@@ -52,6 +52,13 @@
 
 .buttonStart:hover{
     background-color: yellow;
+}
+
+.linkStart{
+    color: rgb(207, 207, 207);
+}
+
+.linkStart:hover{
     color: black;
 }
 
@@ -74,34 +81,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.startedModal {
-    width: 400px;
-    height: 400px;
-    background-color: darkorange;
-    border-radius: 15px;
-    font-family: "Pacifico-Regular";
-    color: white;
-    font-size:20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.buttonCloss {
-    width: 100px;
-    text-align: center;
-    border: solid black 3px;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: rgb(145, 145, 1);
-}
-
-.buttonCloss:hover{
-    background-color: rgb(223, 223, 28);
-    color: black;
 }
 
 .moreModal {
@@ -148,6 +127,12 @@
 .buttonClossMore:hover{
     background-color: rgb(122, 122, 25);
     color: white;
+}
+
+.heartContainer{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
 }
 
 @media (max-width : 1250px) {
@@ -231,11 +216,6 @@
 
     .moreTextContainer{
         overflow: scroll;
-    }
-
-    .startedModal {
-        width: 300px;
-        height: 300px;
     }
 }
 

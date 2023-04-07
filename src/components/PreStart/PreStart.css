@@ -1,0 +1,193 @@
+.windosOfPreStarty{
+    position: fixed;
+    top: 103px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(219, 182, 14);
+    display: flex;
+    justify-content: center;
+}
+
+.startingContainer{
+    position: fixed;
+    top: 153px;
+    height: 100%;
+    width: 1000px;
+    background-color: yellow;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    border: solid black 3px;
+}
+
+.preStartPicture{
+    width: 1000px;
+    border-radius: 18px 18px 0 0;
+    border-bottom: solid black 3px;
+}
+
+.containerForSmallText{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerForSmallText p{
+    font-family: "Pacifico-Regular";
+    font-size: 30px;
+}
+
+.containerForButton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerForButton div{
+    font-family: "Lora-VariableFont";
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 150px;
+    background-color: rgb(255, 196, 0);
+    border-radius: 15px;
+    border: solid black 3px;
+    cursor: pointer;
+}
+
+.start:hover{
+    animation: battonStatAndHome 5s;
+    scale: 105%;
+    background-color: rgb(255, 219, 99);
+    font-size: 23px;
+}
+
+.home:hover{
+    animation: battonStatAndHome 5s;
+    scale: 105%;
+    background-color: rgb(255, 219, 99);
+    font-size: 23px;
+}
+
+@keyframes battonStatAndHome {
+    0%{
+        scale: 101%;
+        background-color: rgb(255, 196, 0);
+        font-size: 20px;
+    }
+    25%{
+        scale: 102%;
+        background-color: rgb(255, 201, 23);
+        font-size: 21px;
+    }
+    50%{
+        scale: 103%;
+        background-color: rgb(255, 204, 37);
+        font-size: 21px;
+    }
+    75%{
+        scale: 104%;
+        background-color: rgb(255, 210, 60);
+        font-size: 22px;
+    }
+    100%{
+        scale: 105%;
+        background-color: rgb(255, 219, 99);
+        font-size: 23px;
+    }
+}
+
+.link {
+    color: black;
+}
+@media (max-width : 1300px) {
+    .startingContainer{
+        width: 700px;
+    }
+
+    .preStartPicture{
+        width: 700px;
+    }
+}
+
+@media (max-width : 1100px) {
+    .startingContainer{
+        width: 600px;
+    }
+
+    .preStartPicture{
+        width: 600px;
+    }
+}
+
+@media (max-width : 900px) {
+    .startingContainer{
+        width: 550px;
+    }
+
+    .preStartPicture{
+        width: 550px;
+    }
+
+    .windosOfPreStarty{
+        top: 68px;
+    }
+
+    .startingContainer{
+        top: 80px;
+    }
+
+    .containerForSmallText p{
+        font-family: "Pacifico-Regular";
+        font-size: 25px;
+    }
+}
+
+@media (max-width : 700px) {
+    .startingContainer{
+        width: 400px;
+    }
+
+    .preStartPicture{
+        width: 400px;
+    }
+
+    .containerForSmallText p{
+        font-family: "Pacifico-Regular";
+        font-size: 20px;
+    }
+
+    .containerForButton div{
+        font-size: 15px;
+        height: 25px;
+        width: 125px;
+    }
+    
+}
+
+@media (max-width : 500px) {
+    .startingContainer{
+        width: 250px;
+    }
+
+    .preStartPicture{
+        width: 250px;
+    }
+
+    .containerForSmallText p{
+        font-family: "Pacifico-Regular";
+        font-size: 20px;
+    }
+
+    .containerForButton div{
+        font-size: 15px;
+        height: 20px;
+        width: 100px;
+    }
+
+    .containerForSmallText{
+       margin: 0 10px;
+    }
+}

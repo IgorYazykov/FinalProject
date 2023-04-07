@@ -1,20 +1,22 @@
-import React from "react";
-import Header from "../components/Header/Header";
-import NavBoard from "../components/NavBoard/NavBoard";
-import ButtonCreateNewQuizle from "../components/ButtonCreateNewQuizle/ButtonCreateNewQuizle";
-import CardQuizesContainer from "../components/CardQuizesContainer/CardQuizesContainer";
-import Footer from "../components/Footer/Footer";
-import MobailNavBoard from "../components/MobailNavBoard/MobailNavBoard";
+import React, { useState } from 'react';
+import CardQuizesContainer from '../components/CardQuizesContainer/CardQuizesContainer';
+import NavBoard from '../components/NavBoard/NavBoard';
+import MobailNavBoard from '../components/MobailNavBoard/MobailNavBoard';
+import ButtonCreateNewQuizle from '../components/ButtonCreateNewQuizle/ButtonCreateNewQuizle';
 
-export default function MainPage () {
-    return(
-        <div>
-            <Header/>
-            <NavBoard/>
-            <MobailNavBoard/>
-            <ButtonCreateNewQuizle/>
-            <CardQuizesContainer/>
-            <Footer/>
-        </div>
-    )
+export default function MainPage() {
+  const [input, setInput] = useState('');
+  const [checkFavorit, setCheckFavorit] = useState(false);
+  const giveCheck = (check) => {
+    setCheckFavorit(check);
+  };
+
+  return (
+    <div>
+      <NavBoard setInput={setInput} giveCheckFavorit={giveCheck}/>
+      <MobailNavBoard setInput={ setInput } giveCheckFavorit={giveCheck}/>
+      <ButtonCreateNewQuizle/>
+      <CardQuizesContainer props={input} check={checkFavorit}/>
+    </div>
+  );
 }

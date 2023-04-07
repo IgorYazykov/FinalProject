@@ -1,0 +1,15 @@
+.favorHeart * {
+    fill: yellow;
+}
+
+.favorHeart *:hover {
+    fill: tomato;
+}
+
+.active{
+    fill: #ff0000;
+}
+
+.active *:hover {
+    fill: rgb(158, 0, 0);
+}
