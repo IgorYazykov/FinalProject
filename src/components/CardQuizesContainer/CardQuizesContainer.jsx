@@ -1,45 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import RenderCardQuize from '../RenderCardQuize/RenderCardQuize';
 import Footer from '../Footer/Footer';
 import './CardQuizesContainer.css';
-import { quizles } from '../../api/index';
+import { fetchQuizles } from '../../store/modules/getQuizles/thunks';
 
-export default function CardQuize({ props, check }) {
-  const [quizlesData, setQuizlsData] = useState([]);
+export default function CardQuize() {
+  const filterQuizlesArr = useSelector((state) => state.quizleReducer.filterQuizlesArr);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await quizles.fetch();
-        setQuizlsData(data);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
+    dispatch(fetchQuizles());
+  }, [dispatch]);
 
   const updtaeDtae = async () => {
     try {
-      const { data } = await quizles.fetch();
-      setQuizlsData(data);
+      dispatch(fetchQuizles());
     } catch (err) {
       console.log(err);
     }
   };
 
-  const filtredArr = quizlesData.filter((data) => {
-    const quizleTitle = data.quizTitle.toLowerCase();
-    const quizleFavorite = data.Favorite.toString();
-    const serchData = props.toLowerCase();
-    if (check) {
-      return quizleFavorite.includes('true');
-    }
-    return quizleTitle.includes(serchData);
-  });
-
   return (
     <div>
       <div className="cardContainer">
-        {filtredArr.map((quizleData) => (
+        {filterQuizlesArr.map((quizleData) => (
           <RenderCardQuize
             key={quizleData.quizTitle}
             id={quizleData.id}

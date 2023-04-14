@@ -41,11 +41,11 @@ export default function RenderCardQuize(props) {
         <p className='titleCard'>{props.title}</p>
         <p className='description'>{props.description}</p>
         <div className='buttonContainer'>
-          <div className='buttonStart'>
+          <div className='buttonStart' >
             <Link className='linkStart'
               style={{ textDecoration: 'none' }}
               to={'/Quizle/prestart'}
-              onClick={setSesiong}
+              onClick={(setSesiong)}
             >
               Star
             </Link>

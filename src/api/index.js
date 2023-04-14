@@ -1,6 +1,6 @@
 import axios from './service';
 
-const quizles = {
+const quizlesAxios = {
   fetch: (() => axios.get('/quizl').then((data) => (data))),
 };
 const questions = {
@@ -9,6 +9,6 @@ const questions = {
 const putFavor = {
   fetch: ((data) => axios(data)),
 };
-export { quizles };
+export { quizlesAxios };
 export { questions };
 export { putFavor };

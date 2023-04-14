@@ -1,15 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './SearchBar.css';
+import { filterQuizles } from '../../store/modules/getQuizles/actionFilter';
 
-export default function Input({ onInput }) {
+export default function Input() {
+  const dispatch = useDispatch();
+
   const inputData = (event) => {
-    onInput(event.target.value);
+    dispatch(filterQuizles(event.target.value));
   };
 
   return (
     <div className='input'>
       <img src='../../img/loupe.png' alt='loupe' />
-      <input type='text' onInput={inputData} />
+      <input type='text' onChange={inputData} />
     </div>
   );
 }
