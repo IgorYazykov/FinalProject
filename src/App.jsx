@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import QuestionOfQuizle from './pages/QuestionOfQuizle';
 import NotFound from './pages/NotFound';
 import store from './store';
+import CreateQuizles from './pages/CreateQuizles';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element = {<Quizle/>} path = '/'/>
           <Route path = '/Quizle/*' element = {<QuestionOfQuizle/>}/>
           <Route path = '/Quizle/*' element = {<NotFound/>}/>
+          <Route path = '/CreateQuizles' element = {<CreateQuizles/>}/>
         </Routes>
       </div>
     </Provider>
