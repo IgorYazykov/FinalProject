@@ -11,6 +11,7 @@
     position: fixed;
     top: 0;
     border-bottom: solid black 3px;
+    z-index: 100;
 }
 
 .title {

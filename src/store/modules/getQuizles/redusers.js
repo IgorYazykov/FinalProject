@@ -8,6 +8,7 @@ const initialState = {
   quizles: [],
   filterQuizlesArr: [],
   filterForFavorite: false,
+  arrWithTitles: [],
 };
 
 /* eslint-disable no-param-reassign */
@@ -18,6 +19,7 @@ const quizleSlice = createSlice({
   redusers: {},
   extraReducers: (builder) => {
     builder.addCase(thuncksQuizles.fulfilled, (state, action) => {
+      state.arrWithTitles = action.payload.map((data) => data.quizTitle);
       state.quizles = action.payload;
       state.filterQuizlesArr = state.quizles;
     });

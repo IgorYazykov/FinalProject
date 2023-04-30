@@ -6,8 +6,8 @@ export const fetchQuestion = createAsyncThunk(
   `${moduleName}/fetchQuestion`,
   async (name) => {
     try {
-      const { data } = await questions.fetch(name);
-      return data;
+      const { data } = await questions.fetch();
+      return { data, name };
     } catch (err) {
       console.log(err);
       return [];

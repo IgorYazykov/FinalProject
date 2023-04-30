@@ -1,0 +1,270 @@
+.createComponentContainer{
+    margin-top: 103px;
+    width: 100%;
+    height: auto;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CreateQuizle{
+    margin-top: 50px;
+    background-color: rgb(230, 196, 4);
+    border-radius: 15px;
+    border: solid black 3px;
+    display: flex;
+    height: auto;
+    width: 500px;
+}
+
+.quizleContainer{
+    padding: 25px;
+    width: 450px;
+}
+
+.TextField{
+    width: 400px;
+}
+
+.TextFieldContainer{
+    padding: 0 25px 15px;
+}
+
+.LableForQuizleContainer{
+    position: absolute;
+    background-color: #00000000;
+    top: 125px;
+    font-family: "Lora-Italic-VariableFont";
+    font-size: 20px;
+}
+
+.buttonSendForm{
+    display: flex;
+    justify-content: center;
+    border: solid black 3px;
+    width: 150px;
+    border-radius: 20px;
+    margin-left: 25px;
+    background-color: rgb(255, 238, 0);
+}
+
+.buttonSendForm p{
+    margin: 5px;
+}
+
+.CreateQuestion{
+    background-color: rgb(209, 178, 0);
+    border-radius: 15px;
+    border: solid black 3px;
+    width: 750px;
+    margin: 50px 0;
+}
+
+.questionCreateContainer{
+    padding: 25px;
+    width: 700px;
+}
+
+.CreateQuestionButtonContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonSendFormQuestion{
+    display: flex;
+    justify-content: center;
+    border: solid black 3px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: rgb(255, 238, 0);
+    cursor: pointer;
+}
+
+.buttonSendFormQuestion p{
+    font-family: "Lora-Italic-VariableFont";
+    font-size: 20px;
+    margin: 5px;
+}
+
+.QuestionInputContainer{
+    margin: 0 25px 25px;
+    padding: 40px 25px 25px;
+    border: solid black 3px;
+    border-radius: 25px;
+    width: 600px;
+    background-color: rgb(255, 230, 0);
+}
+
+.AnswersContainer{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 25px 25px;
+    margin: 40px 25px 25px;
+    border: solid black 3px;
+    border-radius: 15px;
+    background-color: rgb(255, 217, 0);
+}
+
+.TextFieldQuestion{
+    width: 600px;
+}
+
+.TextFieldAnswer{
+    width: 200px;
+}
+
+.QuestionInputContainer::before{
+    content: 'Create question';
+    position: relative;
+    top: -15px;
+    font-family: "Lora-Italic-VariableFont";
+    font-size: 20px;
+}
+
+.TextFieldAnswer *{
+    margin-bottom: 20px;
+}
+
+.Label{
+    display: block;
+    font-family: "Lora-Italic-VariableFont";
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.TruAnswerContainer{
+    display: block;
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.link {
+    color: black;
+    padding-top: 5px;
+}
+
+@media (max-width : 900px) {
+    .createComponentContainer{
+        margin-top: 68px;
+    }
+
+    .LableForQuizleContainer{
+        top: 80px;
+    }
+
+    .questionCreateContainer{
+        padding: 10px;
+        width: 500px;
+    }
+
+    .QuestionInputContainer{
+        margin: 0 15px 15px;
+        padding: 30px 15px 15px;
+        border-radius: 25px;
+        width: 450px;
+    }
+
+    .TextFieldQuestion{
+        width: 450px;
+    }
+
+    .AnswersContainer{
+        width: 390px;
+        padding: 0 15px 15px;
+        margin: 30px 10px 10px;
+        border-radius: 15px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .AnswersContainer *{
+        width: 370px;
+    }
+
+    .CreateQuestion{
+        border-radius: 15px;
+        width: 510px;
+        margin: 30px 0;
+    }
+
+    .QuestionInputContainer{
+        margin: 0 ;
+    }
+
+    .CreateQuestionButtonContainer{
+        margin: 10px 0;
+    }
+}
+
+@media (max-width : 550px) {
+    .CreateQuizle{
+        width: 340px;
+    }
+
+    .CreateQuizle *{
+        width: 280px;
+    }
+
+    .TextFieldQuestion{
+        width: 300px;
+    }
+
+    .TextFieldContainer{
+        padding: 0 0 20px;
+    }
+
+    .TextFieldQuestion *{
+        width: 200px;
+    }
+
+    .quizleContainer{
+        padding: 20px;
+        width: 300px;
+    }
+
+    .LableForQuizleContainer{
+        top: 80px;
+    }
+
+    .questionCreateContainer{
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+    }
+
+    .AnswersContainer{
+        width: 260px;
+        padding: 0 5px 0px;
+        margin: 20px 0 5px;
+    }
+
+    .AnswersContainer *{
+        width: 220px;
+        margin-left: 5px;
+    }
+
+    .QuestionInputContainer{
+        margin: 0 ;
+        padding: 30px 10px 10px;
+        border-radius: 25px;
+        width: 280px;
+    }
+
+    .CreateQuestion{
+        border-radius: 15px;
+        width: 340px;
+        margin: 30px 0;
+    }
+
+    .CreateQuestionButtonContainer{
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    .buttonSendFormQuestion{
+        margin-top: 15px;
+    }
+}

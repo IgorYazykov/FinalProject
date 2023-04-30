@@ -8,6 +8,7 @@ import stopTime from './actionSetStop';
 import startTime from './actionStartTime';
 
 const initialState = {
+  name: '',
   answers: [],
   counter: 0,
   truAnswer: [],
@@ -24,9 +25,12 @@ const questionSlice = createSlice({
   redusers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchQuestion.fulfilled, (state, action) => {
-      state.question = action.payload;
-      state.truAnswer = action.payload.map((data) => data.TrueAnswer);
-      // state.question = action.payload.filter((data) => data.KeyForTest === 'setOne');
+      state.question = action.payload.data;
+      state.question = state.question.filter(
+        (question) => question.questionTitle.includes(state.name),
+      );
+      state.name = action.payload.name;
+      state.truAnswer = action.payload.data.map((data) => data.TrueAnswer);
       if (state.question.length === 0) {
         state.notFound = true;
       } else {
