@@ -1,9 +1,13 @@
 import React from 'react';
 import './ButtonFavorit.css';
+import { useDispatch } from 'react-redux';
+import { actionFavorite } from '../../store/modules/getQuizles/actionFavorite';
 
-export default function buttonFavorit({ onClick }) {
+export default function ButtonFavorit() {
+  const dispatch = useDispatch();
+
   const checked = () => {
-    onClick();
+    dispatch(actionFavorite());
   };
 
   return (

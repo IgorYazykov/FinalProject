@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { questions } from '../../api/index';
+import { useDispatch, useSelector } from 'react-redux';
 import './QuizleRender.css';
 import NotFoundElem from '../NotFoundElem/NotFoundElem';
+import { fetchQuestion } from '../../store/modules/getQuizlesQuestion/thunks';
+import { getAnswer } from '../../store/modules/getQuizlesQuestion/action';
+import { getTrueAnswer } from '../../store/modules/getQuizlesQuestion/actionCheck';
+import { stopTime } from '../../store/modules/getQuizlesQuestion/actionSetStop';
+import { startTime } from '../../store/modules/getQuizlesQuestion/actionStartTime';
+import { clearStore } from '../../store/modules/getQuizlesQuestion/actionClearAnswer';
 
 export default function QuizleRender() {
   const [timeLeft, setTimeLeft] = useState(5 * 60);
@@ -14,79 +20,66 @@ export default function QuizleRender() {
 
   const { name } = useParams();
 
-  const [quizleQuestion, setquizleQuestion] = useState([]);
-  const [counter, setCounter] = useState(0);
   const [checkModal, setcheckModal] = useState(false);
-  const [stopTimer, setStopTimer] = useState(true);
-  const [endTime, setEndTime] = useState(true);
+  const [startWindow, setStartWindow] = useState(true);
 
-  const [arrWithAnswer, setArrWithAnswer] = useState([]);
-  const [notFound, setNotFound] = useState(false);
+  const counter = useSelector((state) => state.questionReduser.counter);
+  const quizleQuestion = useSelector((state) => state.questionReduser.question);
+  const notFound = useSelector((state) => state.questionReduser.notFound);
+  const stopTimer = useSelector((state) => state.questionReduser.stopTimer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await questions.fetch(name);
-        setquizleQuestion(data);
-      } catch (err) {
-        console.log(err);
-        setNotFound(true);
-      }
-    })();
-  }, []);
+    dispatch(clearStore());
+    dispatch(fetchQuestion(name));
+  }, [dispatch]);
 
   const setAnswer = (id, value) => {
-    arrWithAnswer[id] = value;
-    setArrWithAnswer(arrWithAnswer);
+    dispatch(startTime());
+    dispatch(getAnswer({ id, value }));
   };
 
-  useEffect(() => {
+  if (startWindow) {
+    dispatch(startTime());
+    setStartWindow(!startWindow);
+  }
+
+  function getAnswerAndCheck() {
+    dispatch(getTrueAnswer());
+    setcheckModal(!checkModal);
+    dispatch(stopTime());
+  }
+
+  useLayoutEffect(() => {
     const interval = setInterval(() => {
       if (stopTimer === true) {
         setTimeLeft((timeLeft) => (timeLeft >= 1 ? timeLeft - 1 : 0));
       }
     }, 1000);
-    return () => { clearInterval(interval); };
-  }, [stopTimer]);
 
-  function getAnswerAndCheck() {
-    let newCount = 0;
-    arrWithAnswer.map((item, i) => {
-      const { TrueAnswer } = quizleQuestion[i];
-      if (item === TrueAnswer) {
-        newCount += 1;
+    const timerEnd = setInterval(() => {
+      if (stopTimer) {
+        dispatch(getTrueAnswer());
+        setcheckModal(!checkModal);
+        dispatch(stopTime());
+        clearTimeout(timerEnd);
       }
-      setEndTime(!endTime);
-      return counter;
-    });
-    setCounter(newCount);
-    setcheckModal(!checkModal);
-    setStopTimer(!stopTimer);
-  }
-
-  function timer() {
-    const timerEnd = setTimeout(() => {
-      getAnswerAndCheck();
-      clearTimeout(timerEnd);
-      setEndTime(!endTime);
     }, 300000);
-  }
 
-  if (endTime) {
-    timer();
-  }
+    return () => { clearInterval(interval); };
+  });
 
   return (
     <div className='questionContainer'>
       <div className='timercontainer'>
-      <div className='clockContainer'>
-        <div className='clock'>
-          <p>{minutes}</p>
-          <p>:</p>
-          <p>{seconds}</p>
+        <div className='clockContainer'>
+          <div className='clock'>
+            <p>{minutes}</p>
+            <p>:</p>
+            <p>{seconds}</p>
+          </div>
         </div>
       </div>
-    </div>
       <div className='questionFormContainer'>
         <form>
           {quizleQuestion.map((dataQuestion) => (
@@ -129,7 +122,7 @@ export default function QuizleRender() {
                 <Link
                 style={{ textDecoration: 'none' }}
                 to={'/'}>
-                <p className='homeButton'>Go home</p>
+                <p className='homeButton' >Go home</p>
                 </Link>
               </div>
             </div>
